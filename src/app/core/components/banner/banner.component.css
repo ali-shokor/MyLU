@@ -1,0 +1,222 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap'); */
+
+@layer utilities {
+    .bg-hero {
+      @apply absolute top-40 left-1/2 transform -translate-x-1/2 w-[95%] md:w-[85%] h-64 rounded-full bg-gradient-to-r shadow-lg;
+      animation: pulseSmooth 6s infinite alternate;
+    }
+  
+    .bg-tabs {
+      @apply absolute top-60 right-1/2 transform translate-x-1/2 w-[95%] md:w-[85%] h-64 rounded-full bg-gradient-to-r shadow-lg;
+      animation: pulseSmooth 6s infinite alternate;
+    }
+  
+    .bg-circle {
+      @apply absolute top-1/2 left-96 transform -translate-x-1/2 -translate-y-1/2 w-28 h-28 md:w-48 md:h-48 bg-gradient-to-br rounded-full shadow-xl;
+      animation: rotateCircle 8s linear infinite;
+    }
+  
+    /* Light Mode Styles */
+    @media (prefers-color-scheme: light) {
+      .bg-hero,
+      .bg-tabs {
+        @apply from-blue-200 via-blue-300 to-blue-400;
+        box-shadow: 0 8px 30px rgba(0, 80, 255, 0.1);
+      }
+  
+      .bg-circle {
+        @apply from-pink-200 via-purple-300 to-blue-400;
+        box-shadow: 0 4px 20px rgba(255, 0, 100, 0.2);
+      }
+    }
+  
+    /* Dark Mode Styles */
+    @media (prefers-color-scheme: dark) {
+      .bg-hero,
+      .bg-tabs {
+        @apply from-blue-800 via-blue-900 to-blue-950;
+        box-shadow: 0 8px 30px rgba(0, 80, 255, 0.3);
+      }
+  
+      .bg-circle {
+        @apply from-pink-800 via-purple-900 to-blue-950;
+        box-shadow: 0 4px 20px rgba(255, 0, 100, 0.3);
+      }
+    }
+  
+    /* Smooth Animation */
+    @keyframes pulseSmooth {
+      0% {
+        transform: translateY(-10px) scale(1);
+        opacity: 0.9;
+      }
+      100% {
+        transform: translateY(0) scale(1.02);
+        opacity: 1;
+      }
+    }
+  
+    /* Circular Shape Animation */
+    @keyframes rotateCircle {
+      0% {
+        transform: rotate(0deg) scale(1);
+      }
+      100% {
+        transform: rotate(360deg) scale(1.05);
+      }
+    }
+  
+    /* Large Screen Adjustments */
+    @media screen and (min-width: 1024px) {
+      .bg-hero {
+        @apply w-[2000px] h-[358px] left-[30%] rounded-l-full top-52 bg-blue-500;
+      }
+      .bg-tabs {
+        @apply w-[2000px] h-[300px] right-[60%] rounded-r-full top-60 bg-blue-500;
+      }
+    }
+  }
+  
+
+.home-page-title-decription {
+    font-family: "Avenir LT W01 95 Black", sans-serif !important; /* Correct the opening quote */
+    font-size: 2.5rem; /* Adjust size as needed */
+    color: #333; /* Set a primary color */
+    text-shadow: 
+        2px 2px 5px rgba(0, 0, 0, 0.3), /* Subtle outer shadow */
+        -1px -1px 3px rgba(255, 255, 255, 0.5); /* Light inner glow */
+    letter-spacing: 0.05em; /* Add spacing for clarity */
+    text-transform: uppercase; /* Optional: Capitalize all letters */
+    padding: 0.5em 1em; /* Adjust padding */
+  
+    display: inline-block; /* Makes background fit the text */
+    border-radius: 5px; /* Smooth edges */
+
+}
+
+/* From Uiverse.io by mrhyddenn */ 
+.main-page-more-about-us {
+    position: relative;
+    padding: 10px 20px;
+    border-radius: 7px;
+    border: 1px solid rgb(61, 106, 255);
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    background: transparent;
+   
+    overflow: hidden;
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+  }
+  
+  .main-page-more-about-us:hover {
+    background: rgb(61, 106, 255);
+    box-shadow: 0 0 30px 5px rgba(0, 142, 236, 0.815);
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+    background: rgb(90, 130, 250); /* Softer blue for hover */
+  color: rgb(255, 255, 255); /* White text for contrast */
+  box-shadow: 0 0 30px 5px rgba(90, 130, 250, 0.8); 
+  }
+  
+  .main-page-more-about-us:hover::before {
+    -webkit-animation: sh02 0.5s 0s linear;
+    -moz-animation: sh02 0.5s 0s linear;
+    animation: sh02 0.5s 0s linear;
+  }
+  
+  .main-page-more-about-us::before {
+    content: '';
+    display: block;
+    width: 0px;
+    height: 86%;
+    position: absolute;
+    top: 7%;
+    left: 0%;
+    opacity: 0;
+    background: #fff;
+    box-shadow: 0 0 50px 30px #fff;
+    -webkit-transform: skewX(-20deg);
+    -moz-transform: skewX(-20deg);
+    -ms-transform: skewX(-20deg);
+    -o-transform: skewX(-20deg);
+    transform: skewX(-20deg);
+  }
+  
+  @keyframes sh02 {
+    from {
+      opacity: 0;
+      left: 0%;
+    }
+  
+    50% {
+      opacity: 1;
+    }
+  
+    to {
+      opacity: 0;
+      left: 100%;
+    }
+  }
+  
+  .main-page-more-about-us:active {
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: box-shadow 0.2s ease-in;
+    -moz-transition: box-shadow 0.2s ease-in;
+    transition: box-shadow 0.2s ease-in;
+  }
+  
+  .text-gradient {
+    background: linear-gradient(90deg, #ff6f61, #42a5f5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: gradientAnimation 4s infinite alternate;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+.font-special {
+    font-family: 'Pacifico', cursive !important;
+}
+
+/* From Uiverse.io by mrhyddenn */ 
+.shadow__btn {
+    padding: 10px 20px;
+    border: none;
+    font-size: 17px;
+    color: #fff;
+    border-radius: 7px;
+    letter-spacing: 4px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: 0.5s;
+    transition-property: box-shadow;
+  }
+  
+  .shadow__btn {
+    background: rgb(0,140,255);
+    box-shadow: 0 0 25px rgb(0,140,255);
+  }
+  
+  .shadow__btn:hover {
+    box-shadow: 0 0 5px rgb(0,140,255),
+                0 0 25px rgb(0,140,255),
+                0 0 50px rgb(0,140,255),
+                0 0 100px rgb(0,140,255);
+  }

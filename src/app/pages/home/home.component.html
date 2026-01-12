@@ -1,0 +1,19 @@
+<app-header class="flex justify-center animate-slideInUp"  />
+<app-banner class="animate-slideInUp"  /> 
+<!-- @slideInUp for animtion in angular instead of using tailwind / in another words its an another choice -->
+ <app-uni-details-section class="animate-fadeInUp"  />
+ <app-college-student-section class="animate-fadeInUp" />
+ 
+<div (click)="chatBotClicked()" class="fixed bottom-4 right-4 z-50">
+    <div class="fixed bottom-10 z-50 right-14 flex sm:flex-row flex-col items-center justify-end sm:space-x-2 space-y-3">
+        <button class="btn-chatbot flex text-center text-sm sm:text-base">
+        <span>ChatBot</span>
+        </button>
+    </div>
+</div>
+
+@if (chatBot.chatBotButton()) {
+    <app-chatbot class="fixed mx-auto flex justify-center text-center" />
+}
+<app-events class="animate-fadeInUp" />
+<app-footer class="animate-fadeInUp"  />
